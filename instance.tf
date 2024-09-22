@@ -33,7 +33,7 @@ resource "aws_instance" "r100c96" {
   availability_zone = "us-east-1a"
   key_name          = "aws-exam-testing"
   tags = {
-    Name = "Terraform-diff-linux"
+    Name = "New-Server"
   }
  
   provisioner "local-exec" {
@@ -42,7 +42,7 @@ resource "aws_instance" "r100c96" {
 
 
   provisioner "remote-exec" {
-    inline = [ "sudo hostnamectl set-hostname cloudEc2.technix.com" ]
+    inline = [ "sudo hostnamectl set-hostname cloudEc2" ]
     connection {
       host        = self.public_ip
       type        = "ssh"
